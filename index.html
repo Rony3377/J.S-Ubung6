@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      img {
+        width: 200px;
+        border-radius: 120px;
+        box-shadow: black 0px 0px 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="unserePlaneten"></div>
+    <script>
+      const planet = document.getElementById("unserePlaneten");
+      const Neptun = [
+        {
+          planetName: "Merkur",
+          planetBild: "Merkur.jpg",
+          paneltInfo:
+            "Der Merkur ist mit einem Durchmesser von knapp 4880 Kilometern der kleinste,",
+          linkZuWikipediaSeite: "https://de.wikipedia.org/wiki/Merkur_(Planet)"
+        },
+        {
+          planetName: "Venus",
+          planetBild: "Venus.jpg",
+          paneltInfo:
+            "Der Merkur ist mit einem Durchmesser von knapp 4880 Kilometern der kleinste,",
+          linkZuWikipediaSeite: "https://de.wikipedia.org/wiki/Merkur_(Planet)"
+        },
+        {
+          planetName: "Erder",
+          planetBild: "Erde.jpg",
+          paneltInfo:
+            "Der Merkur ist mit einem Durchmesser von knapp 4880 Kilometern der kleinste,",
+          linkZuWikipediaSeite: "https://de.wikipedia.org/wiki/Merkur_(Planet)"
+        },
+        {
+          planetName: "Mars",
+          planetBild: "Mars.jpg",
+          paneltInfo:
+            "Der Merkur ist mit einem Durchmesser von knapp 4880 Kilometern der kleinste,",
+          linkZuWikipediaSeite: "https://de.wikipedia.org/wiki/Merkur_(Planet)"
+        },
+        {
+          planetName: "Jupiter",
+          planetBild: "Jupiter.jpg",
+          paneltInfo:
+            "Der Merkur ist mit einem Durchmesser von knapp 4880 Kilometern der kleinste,",
+          linkZuWikipediaSeite: "https://de.wikipedia.org/wiki/Merkur_(Planet)"
+        },
+        {
+          planetName: "Saturn",
+          planetBild: "Saturn.jpg",
+          paneltInfo:
+            "Der Merkur ist mit einem Durchmesser von knapp 4880 Kilometern der kleinste,",
+          linkZuWikipediaSeite: "https://de.wikipedia.org/wiki/Merkur_(Planet)"
+        },
+        {
+          planetName: "Uranus",
+          planetBild: "Uranus.jpg",
+          paneltInfo:
+            "Der Merkur ist mit einem Durchmesser von knapp 4880 Kilometern der kleinste,",
+          linkZuWikipediaSeite: "https://de.wikipedia.org/wiki/Merkur_(Planet)"
+        },
+        {
+          planetName: "Neptun",
+          planetBild: "Neptun.jpg",
+          paneltInfo:
+            "Der Merkur ist mit einem Durchmesser von knapp 4880 Kilometern der kleinste,",
+          linkZuWikipediaSeite: "https://de.wikipedia.org/wiki/Merkur_(Planet)"
+        }
+      ];
+      //................Hauptfunction......................
+      function erstelleHTML(Titel, Bild, Beschreibung, URL) {
+        return (
+          '<div class ="nice">' +
+          gibTitel(Titel) +
+          gibBild(Bild) +
+          gibBeschreibung(Beschreibung) +
+          '<a href="' +
+          URL +
+          '">Klick für mehr...</a></div>'
+        );
+      }
+      //................Function.(1).....................
+      function gibTitel(Titel) {
+        return '<div class="tfeld">' + `<h4>${Titel}</h4>` + "</div>";
+      }
+      //................Function.(2)........................
+      function gibBild(Bild) {
+        return `<div class= "Bild"><img src = "${Bild}"></div>`;
+      }
+      //.................Function.(3)........................
+      function gibBeschreibung(Beschreibung) {
+        return `<p>${Beschreibung} </p>`;
+      }
+      for (let x = 0; x < Neptun.length; x++)
+        planet.innerHTML += erstelleHTML(
+          Neptun[x].planetName,
+          Neptun[x].planetBild,
+          Neptun[x].paneltInfo,
+          Neptun[x].linkZuWikipediaSeite
+        );
+    </script>
+  </body>
+</html>
